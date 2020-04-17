@@ -1,0 +1,191 @@
+\documentclass[letterpaper, 12pt]{article} 
+
+\usepackage{graphics,graphicx}
+\usepackage{multicol} 
+\usepackage{parskip}
+\usepackage{amsmath}
+\usepackage{multirow}
+\usepackage[spanish,es-nodecimaldot,es-tabla]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{fancyhdr}
+\usepackage[title]{appendix}
+\usepackage{wasysym}
+\usepackage{url}
+\usepackage{braket}
+\usepackage{physics}
+\usepackage{bbold}
+\usepackage{mathtools}
+\usepackage{makeidx}
+%\usepackage[utf8]{inputenc}
+
+\usepackage[font=footnotesize,labelfont=small]{caption}
+\captionsetup{width=0.85\linewidth}
+
+\RequirePackage{geometry}
+\geometry{margin=2cm}
+
+%\selectlanguage{spanish}
+\setlength{\parskip}{0.2cm}
+\setlength{\parindent}{0pt}
+
+
+%----------------------------------------------------------------------------------------
+%   CARÁTULA
+%----------------------------------------------------------------------------------------
+
+
+\title{Rabi oscillations}
+\author{
+Bruno Ximenez R. Alves \\
+SYRTE\\
+}
+\date{15/11/2019}
+%--------------------------------------------------------------------------------CUERPO-----------------------------------------%
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+\section{Pure two--level system}
+
+We will consider here a formal description of a two-level system illuminated with a coherent radiation that can drive an atomic transition.
+The two levels will be labelled $\ket{0}$ and $\ket{1}$ and the energy difference between these two states is $\hbar \omega _{0}$. 
+Since we are in a $2 \times 2$ vectorial space, we need four linear operators to contruct a base wwith which we can write any operator acting 
+on the kets: {$\mathbb{1}$, $\sigma_{z}$, $\sigma_{+}$, $\sigma_{-}$}. Writing those operators in the $\ket{0}$, $\ket{1}$ representation:
+
+\begin{equation}
+\begin{cases}
+    \mathbb{1} =  \ket{1}\bra{1} + \ket{0}\bra{0}\\
+    \sigma_{z} = \ket{1}\bra{1} - \ket{0}\bra{0} \\
+    \sigma_{+} = \ket{1}\bra{0} \\
+    \sigma_{-} = \ket{0}\bra{1}
+\end{cases}
+\end{equation}
+
+Following this notation, we can now write the Hamiltonian of the free atom:
+
+\begin{equation}
+    \mathcal{H} _{free} = \frac {\hbar \omega_{0}}{2} \sigma_{z}
+\end{equation}
+
+We add now the interaction between the atom and the radiation (radio frequency, laser) and we consider the electric field:
+
+\begin{equation}
+    \vec {\mathcal{E}} = \hat{\epsilon} \mathcal{E}_{0} cos (\omega t) = \frac{1}{2} \mathcal{E}_{0} ( \hat{\epsilon}e^{i \omega t} + \hat{\epsilon}^{*}e^{ - i \omega t}),
+\end{equation}
+
+where $\hat{\epsilon}$ is the complex polarization. The interaction energy is given by $\mathcal{H}_{int} = - \vec{\mu} \cdot \vec{\mathcal{E}}$, $\vec{\mu}$ being the electric dipole moment of the atom 
+expressed by $\vec{\mu} =  - e \vec{x}$. By parity arguments, $\bra{0}\vec{x}\ket{0} = \bra{1}\vec{x}\ket{1} = 0$, giving us a hint that we can write this operator in a linear combination of $\sigma^{+}$ and $\sigma^{-}$: 
+
+\begin{equation}
+    \mu = \mu _{01} \sigma^{+} + \mu _{01}^{*} \sigma^{-},
+\end{equation}
+with $\mu _{01} = - e \bra{0}x\ket{1}$. 
+Next we write the full Hamiltonian of interaction:
+
+
+\begin{equation} \label{hintfull}
+\begin{split}
+    \mathcal{H} _{int} & = - \mu \frac{\mathcal{E}_{0}}{2}  ( \hat{\epsilon}e^{i \omega t} + \hat{\epsilon}^{*}e^{ - i \omega t}) \\
+                       & = - \frac{\mathcal{E}_{0}}{2} (\mu _{01} \sigma^{+} + \mu _{01}^{*} \sigma^{-}) ( e^{i \omega t} + e^{ - i \omega t})
+\end{split}
+\end{equation}
+
+We have now considered a linear polarization of the radiation. The next step is to introduce the interation picture to simplify the expression \ref{hintfull}.
+
+\subsection{Interaction picture}
+
+The interaction picture is a unitary transformation acting on vectors and operators. Let's start by writing a Hamiltonian $\mathcal{H} = \mathcal{H}_{0} + \mathcal{H}_{1}(t)$, where we have decoupled the static and the time dependet part of the Hamiltonian. In general, the time dependent part is a small perturbation and this is the starting point to develop the time dependent perturbation theory. Now, the time evolution of the states is giving by the unitary time evolution operator $\mathcal{U}$:
+
+\begin{equation}
+    \ket{\psi(t)} = \mathcal{U} \ket{\psi(0)}
+\end{equation}
+
+Here, $\mathcal{U}$ in an unitary operator that maps the undisturbed state vectors on another state vector after an interaction time whose duration is represented by $t$.
+When there is no interaction, the time evolution is simply given by $\mathcal{U} = e^{- i \mathcal{H}_{0} t / \hbar}$, and under this condition, the states only acquire a phase.
+It is interesting to notice effect of $\mathcal{U}^{\dagger}$ on the state vector:
+
+\begin{equation}
+    \begin{split}
+        \mathcal{U}^{\dagger} \ket{\psi (t)} & = \mathcal{U}^{\dagger} \mathcal{U} \ket{\psi (0)} \\
+                        & = \ket{\psi (0)}
+    \end{split}
+\end{equation}
+
+So, if there is not time dependence in the Hamiltonian, $\mathcal{U}^{\dagger}$ brings the atom back to $t=0$. 
+
+In the interaction picture, the state is transformed in this way:
+
+\begin{equation} \label{timeevol}
+    \ket{\psi(t)}_{\mathcal{I}} = e^{i \mathcal{H}_{0} t / \hbar} \ket{\psi(t)} _{S}
+\end{equation}
+
+In the absence of time dependence, the states are unchanged over time in the interaction picture. However, if there is a time dependent perturbation, the states then assume a temporal change. Inserting \ref{timeevol} in the time dependent Schrodinger equation leads to the trasnformation of the operators:
+
+\begin{equation}
+    \mathcal{A}_{\mathcal{I}} = e^{i \mathcal{H}_{0} t / \hbar} \mathcal{A}_{S} e^{-i \mathcal{H}_{0} t / \hbar}
+\end{equation}
+
+The transformation then has a practical rule:
+
+\begin{equation}
+    \begin{split}
+        \mathcal{A}_{S} \ket{\psi(t)}_{S} & = e^{-i \mathcal{H}_{0} t / \hbar} \mathcal{A}_{\mathcal{I}} e^{i \mathcal{H}_{0} t / \hbar} e^{-i \mathcal{H}_{0} t / \hbar} \ket{\psi(t)}_{\mathcal{I}} \\
+                                    & = e^{i \mathcal{H}_{0} t / \hbar} \mathcal{A}_{\mathcal{I}} \ket{\psi(t)}_{\mathcal{I}}
+    \end{split}
+\end{equation}
+
+Note that this transformation does not lead to any loss of information, since we can map back to the Schrodinger equation by applying the inverse operators. Indeed That is what we have to do after manipulating
+the equations in the interaction picture.
+
+\subsection{Rotating Wave Approximation}
+
+We come back now to the interaction Hamiltonian \ref{hintfull}. The operators are $\sigma^{+}$ and $\sigma^{-}$ and their transformations:
+
+\begin{equation}
+\begin{cases}
+    \sigma^{+}_{S} = e^{- i \mathcal{H}_{0} t / \hbar} \sigma^{+}_{\mathcal{I}}\\
+    \sigma^{-}_{S} = e^{i \mathcal{H}_{0} t / \hbar} \sigma^{-}_{\mathcal{I}}
+\end{cases}
+\end{equation}
+
+\begin{equation}
+    \mathcal{H}_{int} = - \frac{\mathcal{E}_{0}}{2} (\mu _{01} e^{-i \omega_{0} t}\sigma^{+} + \mu _{01}^{*} e^{i \omega_{0} t}\sigma^{-}) ( e^{i \omega t} + e^{ - i \omega t})
+\end{equation}
+
+Considering near resonance processes, we can neglect the fast oscillating terms:
+
+\begin{equation}
+    \mathcal{H}_{int} = - \hbar( \Omega_{R} \sigma^{+} e^{i \Delta t} + c.c.),
+\end{equation}
+where the Rabi frequency is $\Omega_{R} = \mathcal{E}_{0} \mu_{01} / 2\hbar$ and $\Delta = \omega - \omega_{0}$. Coming back to the Schrodinger representation:
+
+\begin{equation}
+    \mathcal{H}_{int} = - \hbar( \Omega_{R} \sigma^{+} e^{i \omega t} + c.c.),
+\end{equation}
+
+And finally;
+
+\begin{equation}
+    \mathcal{H} = \frac {\hbar \omega_{0}}{2} \sigma_{z}  \hbar( \Omega_{R} \sigma^{+} e^{i \omega t} + c.c.)
+\end{equation}
+And here we dropped the minus sign due to the hidden negative sign inside the expression for the electric dipole moment. It turns out that was a bad notation!
+In the matrix form:
+
+\[
+\mathcal{H} =
+  \begin{bmatrix}
+    -\hbar \frac {\omega_{0}}{2} & \hbar \Omega_{R}  e^{i \omega t}  \\
+    \hbar \Omega_{R}^{*}  e^{-i \omega t} & \hbar \frac {\omega_{0}}{2}
+  \end{bmatrix}
+\]
+
+\subsection{Rabi oscillations}
+
+\subsection{Density matrix formalism}
+
+\subsection{Bloch sphere representation}
+
+\section{Ensemble of two-level atoms: mixed states}
+
+\end{document}
