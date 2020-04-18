@@ -1,0 +1,50 @@
+\section{Two-level system}
+
+We will consider here a formal description of a two-level system illuminated with a coherent radiation that can drive an atomic transition with a certain interaction time that can be set experimentally.
+The two levels will be labelled $\ket{0}$ and $\ket{1}$ and the energy difference between these two states is $\hbar \omega _{a} = \mathcal{E}_{1} - \mathcal{E}_{0}$. Since we are in a $2 \times 2$ vectorial space, we need four linear operators to contruct a base with which we can write any operator acting 
+on the kets: {$\mathbb{1}$, $\sigma_{z}$, $\sigma_{+}$, $\sigma_{-}$}. Writing those operators in the $\ket{0}$, $\ket{1}$ representation:
+
+\begin{equation}
+\begin{cases}
+    \hat{\mathbb{1}} =  \ket{1}\bra{1} + \ket{0}\bra{0}\\
+    \hat{\sigma_{z}} = \ket{0}\bra{0} - \ket{1}\bra{1} \\
+    \hat{\sigma_{+}} = \ket{1}\bra{0} \\
+    \hat{\sigma_{-}} = \ket{0}\bra{1}
+\end{cases}
+\end{equation}
+
+Following this notation, we can now write the Hamiltonian of the free atom:
+
+\begin{equation}
+    \hat{\mathcal{H}} _{free} = - \frac {\hbar \omega_{a}}{2} \hat{\sigma_{z}}
+\end{equation}
+
+We add now the interaction between the atom and the radiation (radio frequency, laser) and we consider the electric field:
+
+\begin{equation}
+    \vec {\mathcal{E}} = \hat{\epsilon} \mathcal{E}_{0} cos (\omega t) = \frac{1}{2} \mathcal{E}_{0} ( \hat{\epsilon}e^{i \omega_{L} t} + \hat{\epsilon}^{*}e^{ - i \omega_{L} t}),
+\end{equation}
+
+where $\hat{\epsilon}$ is the complex polarization. The interaction energy is given by $\mathcal{H}_{int} = - \vec{\mu} \cdot \vec{\mathcal{E}}$, $\vec{\mu}$ being the electric dipole moment of the atom 
+expressed by $\vec{\mu} =  - e \vec{r}$. By parity arguments, $\bra{0}\vec{r}\ket{0} = \bra{1}\vec{r}\ket{1} = 0$. Considering the case of linear (real) polarization, we define the operator $\hat{\mu} _{\epsilon} = \mu _{\epsilon} \hat{\sigma}_{x}= e \vec{r} \cdot \hat{\epsilon} \hat{\sigma}_{x}$ allowing us to write the interaction hamiltonian as:
+\begin{equation}
+    \begin{split}
+    \hat{\mathcal{H}}_{int} & = \frac{\mathcal{E}_{0} \mu_{\epsilon}} {2} (e^{i\omega_{L}t} + e^{-i\omega_{L}t}) \hat{\sigma}_{x} \\
+        & = \hbar \Omega_{R} (e^{i\omega_{L}t} + e^{-i\omega_{L}t}) \hat{\sigma}_{x}
+    \end{split}
+\end{equation}
+The above Hamiltonian has been written with the Rabi frequency defined as $\Omega_{R} = \mathcal{E}_{0} \mu_{\epsilon} / 2\hbar$. The full Hamiltonian is:
+
+\begin{empheq}[box={\mymath[colback=blue!10,drop lifted shadow, sharp corners]}]{equation} 
+     \hat{\mathcal{H}} = - \frac {\hbar \omega_{a}}{2} \hat{\sigma_{z}} + \hbar \Omega_{R} (e^{i\omega_{L}t} + e^{-i\omega_{L}t}) \hat{\sigma}_{x}
+\end{empheq}
+
+To further proceed on the solutions of the hamiltonian above, we will work on the interaction picture, which will be described in the next section.
+
+\input{./sections/subsections/interaction_picture}
+
+\input{./sections/subsections/rotatingwave_rabioscillations}
+
+\input{./sections/subsections/densitymatrix}
+
+\input{./sections/subsections/bloch_sphere}

@@ -1,0 +1,11 @@
+# Fdb version 3
+["pdflatex"] 1587216436 "twolevelsystem.tex" "twolevelsystem.pdf" "twolevelsystem" 1587216436
+  "/usr/local/texlive/2019/texmf-dist/web2c/texmf.cnf" 1577314212 39451 6c50cbbc48279cc2d67f72e32ca48ad5 ""
+  "/usr/local/texlive/2019/texmf-var/web2c/pdftex/pdflatex.fmt" 1578833928 4294522 b90f7a7ba3aa2e5774d27d874c585920 ""
+  "/usr/local/texlive/2019/texmf.cnf" 1578833879 577 d150fef99ac436ad1156e86b0892f6ef ""
+  "sections/subsections/interaction_picture.tex" 0 -1 0 ""
+  "twolevelsystem.aux" 1587133733 8 a94a2480d3289e625eea47cd1b285758 ""
+  "twolevelsystem.tex" 1587216436 3060 9ea67fe17fa09aec4d2feb8302fb3fac ""
+  (generated)
+  "twolevelsystem.pdf"
+  "twolevelsystem.log"

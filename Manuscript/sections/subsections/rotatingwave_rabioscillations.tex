@@ -1,0 +1,41 @@
+\subsection{Rotating Wave Approximation and Rabi oscillations}
+
+We come back now to the interaction Hamiltonian blah. The operators are $\sigma^{+}$ and $\sigma^{-}$ and their transformations:
+
+\begin{equation}
+\begin{cases}
+    \sigma^{+}_{S} = e^{- i \mathcal{H}_{0} t / \hbar} \sigma^{+}_{\mathcal{I}}\\
+    \sigma^{-}_{S} = e^{i \mathcal{H}_{0} t / \hbar} \sigma^{-}_{\mathcal{I}}
+\end{cases}
+\end{equation}
+
+\begin{equation}
+    \mathcal{H}_{int} = - \frac{\mathcal{E}_{0}}{2} (\mu _{01} e^{-i \omega_{0} t}\sigma^{+} + \mu _{01}^{*} e^{i \omega_{0} t}\sigma^{-}) ( e^{i \omega t} + e^{ - i \omega t})
+\end{equation}
+
+Considering near resonance processes, we can neglect the fast oscillating terms:
+
+\begin{equation}
+    \mathcal{H}_{int} = - \hbar( \Omega_{R} \sigma^{+} e^{i \Delta t} + c.c.),
+\end{equation}
+where the Rabi frequency is $\Omega_{R} = \mathcal{E}_{0} \mu_{01} / 2\hbar$ and $\Delta = \omega - \omega_{0}$. Coming back to the Schrodinger representation:
+
+\begin{equation}
+    \mathcal{H}_{int} = - \hbar( \Omega_{R} \sigma^{+} e^{i \omega t} + c.c.),
+\end{equation}
+
+And finally;
+
+\begin{equation}
+    \mathcal{H} = \frac {\hbar \omega_{0}}{2} \sigma_{z}  \hbar( \Omega_{R} \sigma^{+} e^{i \omega t} + c.c.)
+\end{equation}
+And here we dropped the minus sign due to the hidden negative sign inside the expression for the electric dipole moment. It turns out that was a bad notation!
+In the matrix form:
+
+\[
+\mathcal{H} =
+  \begin{bmatrix}
+    -\hbar \frac {\omega_{0}}{2} & \hbar \Omega_{R}  e^{i \omega t}  \\
+    \hbar \Omega_{R}^{*}  e^{-i \omega t} & \hbar \frac {\omega_{0}}{2}
+  \end{bmatrix}
+\]

@@ -1,0 +1,85 @@
+\subsection{Interaction picture}
+
+The interaction picture is a unitary transformation acting on vectors and operators. Let's start by writing a Hamiltonian $\mathcal{H} = \mathcal{H}_{0} + \mathcal{H}_{1}(t)$, where we have decoupled the static and the time dependet part of the Hamiltonian. The central idea of the problem here is that $\mathcal{H}_{0}$ is the Hamiltonian of an uperturbed system and $\mathcal{H}_{1}$ is a time dependent perturbation on this system. We work on a basis of well known eigenvectors of $\mathcal{H}_{0}$ and we are interested in studying the dynamics of the system when the perturbation is on and how the states will evolve with time. 
+
+In quantum mechanics, we write an operator that propagates the wavefuntion from one point to another in time: $\ket{\psi(t)} = \mathcal{U} \ket{\psi(0)}$. This time evolution operator is unitary, i.e. $\mathcal{U}^{\dagger} \mathcal{U} = \mathbb{1}$ which conserves the proper normalization of the states, as required by quantum mechanics:
+
+\begin{equation}
+    \bra{\psi(t)} \ket{\psi(t)} = \bra{\psi(0)} \mathcal{U}^{\dagger}\mathcal{U} \ket{\psi(0)} = 1
+\end{equation}
+
+It is interesting to note that $\mathcal{U}^{\dagger}$, when acting on wavefunctions propagated in time, brings the states back to $t=0$: $\ket{\psi(0)} = \mathcal{U}^{\dagger} \ket{\psi(t)}$. Now, what about how to write those time evolution operators? Well, if the Hamiltonian of the system has a complicated time dependence this problem can be complicated. However, if $[\mathcal{U}, \partial\mathcal{U}/\partial t] = 0$, then:
+
+\begin{equation}
+    \mathcal{U} (t) = e^{ - \frac{i}{\hbar} \int ^{t}_{0} \mathcal{H} d\tau}
+\end{equation}
+
+In particular, for time independent Hamiltonians, $\mathcal{U} = e^{-i\mathcal{H}t / \hbar}$. 
+
+In the interaction picture, we are mainly interested in removing the time evolution contribution due to the well known $\mathcal{H}_{0}$, which usually contributes only with a phase oscillation on the probability amplitudes. The way to do this is to apply the reverse time evolution operator with respect to $\mathcal{H}_{0}$. Hence, in the interaction picture, the states transform as:
+
+\begin{equation}
+    \ket{\psi(t)}_{I} = e^{i\mathcal{H}_{0}t/ \hbar} \ket{\psi(t)}_{S},
+\end{equation}
+where S and I stand for Schrodinger and Interation picture respectively. Let's insert the transformed states in the time dependent Schrodinger equation (TDSE):
+
+\begin{equation}
+    \begin{aligned}
+    i \hbar \partial_{t} (e^{-i\mathcal{H}_{0}t/ \hbar} \ket{\psi(t)}_{I}) & = (\mathcal{H}_{0} + \mathcal{H}_{1}) e^{-i\mathcal{H}_{0}t/ \hbar} \ket{\psi(t)}_{I} \\
+    i \hbar \partial_{t} \ket{\psi(t)}_{I} & = e^{i\mathcal{H}_{0}t/ \hbar} \mathcal{H}_{1} e^{-i\mathcal{H}_{0}t/ \hbar} \ket{\psi(t)}_{I}
+    \end{aligned}
+\end{equation}
+Now we have the motivation to define how operators transform in the interaction picture: $\mathcal{H}_{1I} = e^{i\mathcal{H}_{0}t/ \hbar} \mathcal{H}_{1} e^{-i\mathcal{H}_{0}t/ \hbar}$, and we recover the beautiful Schrodinger equation--like form in the interaction picture:
+
+\begin{equation} \label{int_se}
+    i \hbar \partial_{t} \ket{\psi(t)}_{I} = \mathcal{H}_{1I}  \ket{\psi(t)}_{I}
+\end{equation}
+
+That is indeed beautiful, but once we are there, how do we handle the solutions? Well, eventually we will want to come back to the Schrodinger equation to write the complete solution of the problem. Let's start by writing states in a general form: $\ket{\psi(t)}_{I} = \sum _{j} c_{j}(t) \ket{j}$. We map the state back to the Schrodinger picture by propagating the wavefunction in time with respect to $\mathcal{H}_{0}$:
+
+\begin{equation}
+    \begin{aligned}
+        \ket{\psi(t)} & = e^{-i \mathcal{H}_{0}t / \hbar} \sum _{j} c_{j}(t) \ket{j} \\
+            & = \sum _{j} c_{j}(t) e^{-i \omega_{j} t} \ket{j}, \mathrm{with} \omega_{j} = \mathcal{E}_{j} / \hbar
+    \end{aligned}
+\end{equation}
+
+We have dropped the $S$ index. Mapping the vector states back to Schrodinger equation adds then the usual phase oscillation to the solution. The job here is now to calculate the various coefficients $c_{j}(t)$. For this purpose, we can work on the frame of the interaction picture and insert $\ket{\psi(t)}_{I}$ in equation \ref{int_se}. 
+
+
+
+% Here, $\mathcal{U}$ in an unitary operator that maps the undisturbed state vectors on another state vector after an interaction time whose duration is represented by $t$.
+% When there is no interaction, the time evolution is simply given by $\mathcal{U} = e^{- i \mathcal{H}_{0} t / \hbar}$, and under this condition, the states only acquire a phase.
+% It is interesting to notice effect of $\mathcal{U}^{\dagger}$ on the state vector:
+
+% \begin{equation}
+%     \begin{split}
+%         \mathcal{U}^{\dagger} \ket{\psi (t)} & = \mathcal{U}^{\dagger} \mathcal{U} \ket{\psi (0)} \\
+%                         & = \ket{\psi (0)}
+%     \end{split}
+% \end{equation}
+
+% So, if there is not time dependence in the Hamiltonian, $\mathcal{U}^{\dagger}$ brings the atom back to $t=0$. 
+
+% In the interaction picture, the state is transformed in this way:
+
+% \begin{equation} \label{timeevol}
+%     \ket{\psi(t)}_{\mathcal{I}} = e^{i \mathcal{H}_{0} t / \hbar} \ket{\psi(t)} _{S}
+% \end{equation}
+
+% which is equivalent to removing the time dependence due to $\mathcal{H}_{0}$ and
+% in the absence of time dependence ($\mathcal{H}_{1}$), the states are unchanged over time in the interaction picture. However, if there is a time dependent perturbation, the states then assume a temporal change. Inserting \ref{timeevol} in the time dependent Schrodinger equation leads to the trasnformation of the operators:
+
+% \begin{equation}
+%     \mathcal{A}_{\mathcal{I}} = e^{i \mathcal{H}_{0} t / \hbar} \mathcal{A}_{S} e^{-i \mathcal{H}_{0} t / \hbar}
+% \end{equation}
+
+% The transformation then has a practical rule:
+
+% \begin{equation}
+%     \begin{split}
+%         \mathcal{A}_{S} \ket{\psi(t)}_{S} & = e^{-i \mathcal{H}_{0} t / \hbar} \mathcal{A}_{\mathcal{I}} e^{i \mathcal{H}_{0} t / \hbar} e^{-i \mathcal{H}_{0} t / \hbar} \ket{\psi(t)}_{\mathcal{I}} \\
+%                                     & = e^{-i \mathcal{H}_{0} t / \hbar} \mathcal{A}_{\mathcal{I}} \ket{\psi(t)}_{\mathcal{I}},
+%     \end{split}
+% \end{equation}
+% which is obvious by the definition of the interaction picture: the dynamics in the Schrodinger picture is equivalent to the dynamics in the interaction piture with the time evolution due to the unperturbed Hamiltonian added back to the states.
