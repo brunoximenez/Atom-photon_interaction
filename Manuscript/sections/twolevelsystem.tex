@@ -26,7 +26,7 @@ We add now the interaction between the atom and the radiation (radio frequency, 
 \end{equation}
 
 where $\hat{\epsilon}$ is the complex polarization. The interaction energy is given by $\mathcal{H}_{int} = - \vec{\mu} \cdot \vec{\mathcal{E}}$, $\vec{\mu}$ being the electric dipole moment of the atom 
-expressed by $\vec{\mu} =  - e \vec{r}$. By parity arguments, $\bra{0}\vec{r}\ket{0} = \bra{1}\vec{r}\ket{1} = 0$. Considering the case of linear (real) polarization, we define the operator $\hat{\mu} _{\epsilon} = \mu _{\epsilon} \hat{\sigma}_{x}= e \vec{r} \cdot \hat{\epsilon} \hat{\sigma}_{x}$ allowing us to write the interaction hamiltonian as:
+expressed by $\vec{\mu} =  - e \vec{r}$. By parity arguments, $\bra{0}\vec{r}\ket{0} = \bra{1}\vec{r}\ket{1} = 0$. Considering the case of linear (real) polarization, we define the operator $\hat{\mu} _{\epsilon} = \mu _{\epsilon} \hat{\sigma}_{x}= e \bra{1}\vec{r} \cdot \hat{\epsilon} \ket{0} \hat{\sigma}_{x}$ allowing us to write the interaction hamiltonian as:
 \begin{equation}
     \begin{split}
     \hat{\mathcal{H}}_{int} & = \frac{\mathcal{E}_{0} \mu_{\epsilon}} {2} (e^{i\omega_{L}t} + e^{-i\omega_{L}t}) \hat{\sigma}_{x} \\
@@ -35,7 +35,7 @@ expressed by $\vec{\mu} =  - e \vec{r}$. By parity arguments, $\bra{0}\vec{r}\ke
 \end{equation}
 The above Hamiltonian has been written with the Rabi frequency defined as $\Omega_{R} = \mathcal{E}_{0} \mu_{\epsilon} / 2\hbar$. The full Hamiltonian is:
 
-\begin{empheq}[box={\mymath[colback=blue!10,drop lifted shadow, sharp corners]}]{equation} 
+\begin{empheq}[box={\mymath[colback=blue!10,drop lifted shadow, sharp corners]}]{equation}
      \hat{\mathcal{H}} = - \frac {\hbar \omega_{a}}{2} \hat{\sigma_{z}} + \hbar \Omega_{R} (e^{i\omega_{L}t} + e^{-i\omega_{L}t}) \hat{\sigma}_{x}
 \end{empheq}
 

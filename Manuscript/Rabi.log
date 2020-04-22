@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2020.1.12)  18 APR 2020 20:38
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2020.1.12)  21 APR 2020 20:59
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1153,10 +1153,10 @@ Package rerunfilecheck Info: File `Rabi.out' has not changed.
 (rerunfilecheck)             Checksum: FA2F7CB9F5CA51D1248F65BC5C5C97FA;442.
  ) 
 Here is how much of TeX's memory you used:
- 36020 strings out of 492163
- 715319 string characters out of 6125291
- 817252 words of memory out of 5000000
- 39834 multiletter control sequences out of 15000+600000
+ 36021 strings out of 492163
+ 715328 string characters out of 6125291
+ 817329 words of memory out of 5000000
+ 39835 multiletter control sequences out of 15000+600000
  540463 words of font info for 55 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  64i,17n,103p,811b,996s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1173,10 +1173,10 @@ local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/loc
 al/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/
 texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/t
 exlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on Rabi.pdf (4 pages, 144101 bytes).
+Output written on Rabi.pdf (4 pages, 145857 bytes).
 PDF statistics:
- 176 PDF objects out of 1000 (max. 8388607)
- 131 compressed objects within 2 object streams
+ 177 PDF objects out of 1000 (max. 8388607)
+ 132 compressed objects within 2 object streams
  32 named destinations out of 1000 (max. 500000)
  205 words of extra memory for PDF output out of 10000 (max. 10000000)
 

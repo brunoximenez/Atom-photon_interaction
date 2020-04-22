@@ -47,11 +47,11 @@ That is indeed beautiful, but once we are there, how do we handle the solutions?
 We have dropped the $S$ index. Mapping the vector states back to Schrodinger equation adds then the usual phase oscillation to the solution. The job here is now to calculate the various coefficients $c_{j}(t)$. For this purpose, we can work on the frame of the interaction picture and insert $\ket{\psi(t)}_{I}$ in equation \ref{int_se}. The coefficients can then be determined:
 
 \begin{equation}
-    c_{k}(t) = -\frac{i}{\hbar} \sum_{j} c_{j}(t) \bra{k} \mathcal{H}_{1I} \ket{j}
+    \dot{c}_{k}(t) = -\frac{i}{\hbar} \sum_{j} c_{j}(t) \bra{k} \mathcal{H}_{1I} \ket{j}
 \end{equation}
 
 Writing the interaction operator mapped on the Schrodinger picture:
 
 \begin{empheq}[box={\mymath[colback=blue!10,drop lifted shadow, sharp corners]}]{equation} 
-    c_{k}(t) = -\frac{i}{\hbar} \sum_{j} c_{j}(t) e^{i\omega_{kj}t} \bra{k} \mathcal{H}_{1} \ket{j}
+    \dot{c}_{k}(t) = -\frac{i}{\hbar} \sum_{j} c_{j}(t) e^{i\omega_{kj}t} \bra{k} \mathcal{H}_{1} \ket{j}
 \end{empheq}
