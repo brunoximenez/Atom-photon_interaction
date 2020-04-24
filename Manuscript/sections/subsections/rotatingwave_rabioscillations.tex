@@ -89,8 +89,26 @@ The on resonance case $\Delta=0$, flips the population entirely from the ground 
 
 As you can guess, in the experiment, there are only two parameters that the experimentalist will be interested in to characterize or set up the experiment: $t_{\pi}$ (or the laser intensity) and $\Delta$. It is useful then to re-write the expression for the population of the excited state as a function of these two parameters:
 
-\begin{equation}
+\begin{equation}\label{p_excited}
     P_{e}(t, \Delta) = \left(\frac{\pi}{2}\right)^{2} \left( \frac{ \textrm{sin}\Delta' t/t_{\pi}} {\Delta'} \right)^{2},
 \end{equation}
 
 with $\Delta' = \frac{\pi}{2} \sqrt{1 + (t_{\pi} \Delta / \pi)^{2}}  $.
+
+A useful relation is to calculate the Full Width Half Maximum (FWHM) when the laser pulse duration is set to $t_{\pi}$. Defining $P_{e}(t=t_{\pi}, \Delta=\delta/2) = 0.5$ and inserting this in equation \ref{p_excited} we find the equation to solve:
+\begin{equation}
+    \textrm{sin}\Delta' = \frac{\sqrt{2}\Delta'}{\pi}
+\end{equation}
+Expanding the sine function we find:
+\begin{equation}
+    \begin{cases}
+    \sum_{k=0}^{\infty} \frac{(-1)^{k}\Delta'^{2k}}{(2k+1)!} - \frac{\sqrt{2}}{\pi} = 0 \\
+    \\
+    t_{\pi}\delta = \sqrt{ (\frac{2\Delta'}{\pi})^{2} - 1}
+    \end{cases}
+\end{equation}
+
+Truncating the series up to $k=3$, we find $t_{\pi}\delta \approx 0.797$, with $\delta$ in Hz. This simple numerical relation tells us that the width of the resonance shape is inversely proportional to the laser pulse duration. Hence, if you are seeking to observe a very narrow atomic resonance using the Rabi spectroscopy scheme (using a $\pi$-pulse to flip the atomic population), the pulse duration may represent a limitation for how narrow the observed transition can be, and in general, this yields in a technical limitation for the precision of experiments.
+
+In the context of optical clocks, where the natural line width of the clock resonances are sub-Hertz, the Rabi profile is the observed resonance shape, limiting the stability of the clocks. The general pratice is then to set $t_{\pi}$ as long as possible. The superior technical limit for the pulse duration is naturally the coherence time of the laser, which, by Fourier transform, is related to the clock laser frequency fluctuations or phase noise. A standard practice is to reference the clock laser to an Ultra Stable Cavity (USC) with a finesse on the order of hundreds of thousands.
+The ultimate limit then becames the brownian motion of the cavity mirror coating or thermal agitation, producing a noise in the cavity length and hence noise in the resonance frequency of the cavity which propagates to the laser stabilized to cavity. Solutions to this problem include cryogenic USC and long distance between the mirrors. The coherence time of clock lasers is typically near 1 second.
