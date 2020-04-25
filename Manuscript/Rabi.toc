@@ -1,6 +1,6 @@
 \contentsline {section}{\numberline {1}Two-level system}{1}{section.1}%
 \contentsline {subsection}{\numberline {1.1}Interaction picture}{2}{subsection.1.1}%
 \contentsline {subsection}{\numberline {1.2}Rotating Wave Approximation and Rabi oscillations}{3}{subsection.1.2}%
-\contentsline {subsection}{\numberline {1.3}Density matrix formalism}{6}{subsection.1.3}%
-\contentsline {subsection}{\numberline {1.4}Bloch sphere representation}{6}{subsection.1.4}%
-\contentsline {section}{\numberline {2}Ensemble of two-level atoms: mixed states}{6}{section.2}%
+\contentsline {subsection}{\numberline {1.3}Density matrix formalism}{7}{subsection.1.3}%
+\contentsline {subsection}{\numberline {1.4}Bloch sphere representation}{7}{subsection.1.4}%
+\contentsline {section}{\numberline {2}Ensemble of two-level atoms: mixed states}{7}{section.2}%
