@@ -1,1 +1,130 @@
-\subsection{Bloch sphere representation}
+\subsection{Geometrical description: Bloch sphere representation}
+
+A geometrical description a the two-level system can be done by the use of the density operator defined as:
+\begin{equation}
+    \hat{\rho} = \ket{\psi} \bra{\psi}
+\end{equation}
+Furthermore, when considering a mixed ensemble, the density operator has to be written as:
+
+\begin{equation}
+    \hat{\rho} = \sum_{j} p_{j} \hat{\rho}_{j}, 
+\end{equation}
+
+And the statistical average of an observable is calculated as:
+
+\begin{equation} \label{average}
+    \langle \hat{A} \rangle = tr(\hat{\rho} \hat{A})
+\end{equation}
+
+where the index $j$ refers to a pure state, $p_{j}$ is the probability of this pure state to be found within the ensemble and $\hat{\rho}_{j}$ is the density operator associated to this pure state. For an ensemble of $N$ atoms, $p_{j} = N_{j}/N$. I will first start the discussion regarding a pure state. 
+
+The density operator can be written in a more useful way:
+\begin{equation}
+    \hat{\rho} = \frac{1}{2} (\mathbb{1} + \vec{r} \cdot \vec{\sigma})
+\end{equation}
+
+The vector $\vec{r}$ is called the Bloch vector and $\vec{S} = \vec{\sigma}/2$ is the usual spin $1/2$ operator.
+Here is a list of useful relations concerning the $\sigma$ operators:
+
+\begin{equation}
+\begin{cases}
+    [\sigma_{i}, \sigma_i]  = 2 i \varepsilon_{ijk} \sigma_{k} \\
+    \sigma_{i}^{2} = \mathbb{1} \\
+    \sigma_{i} \sigma_{j} \sim \sigma_{k} \\
+    tr(\sigma_{i}) = 0
+\end{cases}
+\end{equation}
+
+Now, using the expression \ref{average}, we can show that:
+
+\begin{equation}
+    \langle \sigma_{i} \rangle = r_{i}
+\end{equation}
+
+This expression tells us that the components of the Bloch vector are just the averages of the Pauli operators
+$\langle \sigma_{i} \rangle = \bra{\psi} \sigma_{i} \ket{\psi}$. In terms of the elements of the density matrix:
+
+\begin{equation}
+\begin{cases}
+    r_{x} = 2 \mathrm{Re}(\rho_{01})\\
+    r_{y} = 2 \mathrm{Im}(\rho_{10}) \\
+    r_{z} = \rho_{00} - \rho_{11}
+\end{cases}
+\end{equation}
+
+The Bloch vector, as defined above, has three real numbers that completely specify the probability amplitudes in the wavefunction. For a pure state the Bloch vector is a unit vector and all possible vectors lie on a sphere of radius 1. For mixed states the Bloch vector lies within the sphere.
+Writting the wavefunction as $\ket{\psi} = \phi_{0} \ket{0} + \phi_{1} \ket{1}$:
+
+\begin{equation}
+\begin{cases}
+    \rho_{00} = |\phi_{0}|^{2} \\
+    \rho_{11} = |\phi_{1}|^{2} \\
+    \rho_{01} = \phi_{0}\phi_{1}^{*} \\
+    \rho_{10} = \rho_{01}^{*}
+\end{cases}
+\end{equation}
+
+In this view, is it interesting to note that a rotation applied to the wavefunction leads to exact same rotation of the Bloch vector. Let's consider the rotation operator $\hat{D}(R)$:
+
+\begin{equation}
+    \hat{D}(R) \ket{\psi} = \ket{\psi}_{r}
+\end{equation}
+
+And the rotation on operators:
+
+\begin{equation}
+    \hat{D}(R) \hat{O} \hat{D}(R)^{-1} = \hat{O}_{r}
+\end{equation}
+
+Applying the rotation to the density operator:
+
+\begin{equation}
+    \hat{D}(R) \hat{\rho} = \frac{1}{2}(\mathbb{1} + \vec{r}\cdot \hat{D}(R) \vec{\sigma} \hat{D}(R)^{-1})
+\end{equation}
+
+Which is equivalent to calculate the density operator in terms of the rotated states:
+
+\begin{equation}
+    \hat{\rho}_{r} = \ket{\psi}_{r} \bra{\psi}_{r}
+\end{equation}
+
+Here the name rotation wave approximation makes more sense. The unitary time evolution operator $e^{-i \omega_{L} t \sigma_{z}/2}$ is a rotation of the Bloch vector around the z component with angular frequency $\omega_{L}$.
+The unitary transformation consists in applying the reverse time evolution operator in order to cancel this rotation. Or, a transformation to a counter-rotating frame. Indeed, in the basis {$\ket{0}, \ket{1}$}:
+
+\[
+e^{- i \omega_{L}t \hat{\sigma}_{z}/2} =
+  \begin{bmatrix}
+    e^{- i \omega_{L}t/2} & 0  \\
+    0 & e^{ i \omega_{L}t /2}
+  \end{bmatrix}
+\]
+
+Now, looking at the Hamiltonian \ref{h_int}, we can tell now that the effect of the laser interaction on resonance is to rotate the Bloch vector around the x axis with angular frequency $2\Omega_{R}$. If not on resonance, rotations around the z axis are expected. Another way to see this is to understand that the detuning changes the rotation axis. Re-writting the Hamiltonian \ref{h_int} in the general rotation rotation operator form:
+
+\begin{equation} \label{h_n}
+    \mathcal{H} = \frac{\hbar \Omega'}{2} \vec{\sigma}_{n}
+\end{equation}
+
+With, $\vec{\sigma}_{n} = \frac{\vec{n}}{|\vec{n}|} \cdot \vec{\sigma}$ and:
+
+\begin{equation}
+    \hat{n} = \frac{- \Delta \hat{z} + 2\Omega_{R} \hat{x}} {\Omega'}
+\end{equation}
+
+THe Hamiltonian \ref{h_n} has now a simple and beautiful interpretation: a rotation of the Bloch vector around the axis defined by the vector $\vec{n}$ with angular frequency $\Omega'$.
+
+The initial condition $p_{0}(0) = 1$ is represented by a Bloch vector pointing up in the z axis, and after a $\pi$ pulse on resonance the vector rotates around the x-axis and ends at the z axis pointing down and the population is inverted: $p_{1}(t_{\pi}) = 1$. A $\pi /2$ pulse leaves the Bloch vector on the y axis and the wavefunction is:
+
+\begin{equation}
+    \ket{\psi (t = \pi/2)} = \frac{1}{\sqrt{2}}(\ket{0} - i \ket{1})
+\end{equation}
+
+In general, quantum state manipulations with laser interaction is represented by unitary time evolution operators which represent rotations of the Bloch vector around a given axis by an angle $\theta = \Omega t$:
+
+\begin{equation}
+    \ket{\psi}_{r} = \mathcal{U} \ket{\psi}
+\end{equation}
+
+\begin{equation}
+    \mathcal{U} = e^{- i \Omega t \hat{\sigma}_{\vec{n}} /2}
+\end{equation}

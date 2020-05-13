@@ -3,12 +3,12 @@
 We turn our attention now back to the full Hamiltonian of the problem. Let's re-write this equation in a more convinient way:
 
 \begin{equation} \label{mod_ham}
-    \hat{\mathcal{H}} = - \frac {\hbar \omega_{L}}{2} \hat{\sigma_{z}} + \hbar \Delta \hat{\Phi} + \hbar \Omega_{R} (e^{i\omega_{L}t} + e^{-i\omega_{L}t}) \hat{\sigma}_{x},
+    \hat{\mathcal{H}} = - \frac {\hbar \omega_{L}}{2} \hat{\sigma_{z}} - \frac {\hbar \Delta} {2} \hat{\sigma_{z}} + \hbar \Omega_{R} (e^{i\omega_{L}t} + e^{-i\omega_{L}t}) \hat{\sigma}_{x},
 \end{equation}
 
-where $\Delta = \omega_{a} - \omega_{L}$ and $\hat{\Phi} = \ket{1}\bra{1}$. we also shifted the whole energy spectrum by $\hbar \Delta \hat{\mathbb{1}}/2$. Now we write down the transformation to the interaction picture with respect to the first term of expression \ref{mod_ham}, i.e. $\mathcal{H}_{0} = - \frac {\hbar \omega_{L}}{2}$.
+where $\Delta = \omega_{a} - \omega_{L}$. Now we write down the transformation to the interaction picture with respect to the first term of expression \ref{mod_ham}, i.e. $\mathcal{H}_{0} = - \frac {\hbar \omega_{L}}{2}$.
 
-Performing the transformation term by term, given that $[\sigma_{z}, \hat{\phi}] = 0$, the first term is symmetrical under the interaction picture transformation. We calculate then how $\hat{\sigma_{x}}$ transforms. Let's write $\hat{\sigma_{x}} = \hat{\sigma^{+}} + \hat{\sigma^{-}}$ and using the baker-Hausdorff lemma:
+Performing the transformation term by term, the first term is symmetrical under the this operation. We calculate then how $\hat{\sigma_{x}}$ transforms. Let's write $\hat{\sigma_{x}} = \hat{\sigma^{+}} + \hat{\sigma^{-}}$ and using the baker-Hausdorff lemma:
 
 \begin{equation}
     e^{B}Ae^{-B} = B + [B,A] + \frac{1}{2!} [B, [B,A]] + ...,
@@ -23,16 +23,16 @@ we find:
 \end{cases}
 \end{equation}
 
-Writing the interaction Hamiltonian in the interaction picture:
+Writing the interaction Hamiltonian in the interaction picture like:
 
 \begin{equation}
-    \mathcal{H}_{int}^{I} = \hbar \Delta \hat{\phi} + \hbar\Omega_{R} (e^{i \omega_{L} t} + c.c.) (e^{i \omega_{L} t} \hat{\sigma}^{+} + e^{-i \omega_{L} t}\hat{\sigma}^{-})
+    \mathcal{H}_{int}^{I} = - \hbar \frac{\Delta}{2} \hat{\sigma_{z}} + \hbar\Omega_{R} (e^{i \omega_{L} t} + c.c.) (e^{i \omega_{L} t} \hat{\sigma}^{+} + e^{-i \omega_{L} t}\hat{\sigma}^{-})
 \end{equation}
 
 In this expression some terms do not oscillate and other oscillate with $2\omega_{L}$. The rotating wave approximation consists in neglecting those fast oscillating terms. The interaction then is finally written:
 
-\begin{equation}
-    \mathcal{H}_{int}^{I} = \hbar \Delta \hat{\phi} + \hbar\Omega_{R} \hat{\sigma}_{x}
+\begin{equation} \label{h_int}
+    \mathcal{H}_{int}^{I} = - \hbar \frac{\Delta}{2} \hat{\sigma_{z}} + \hbar\Omega_{R} \hat{\sigma}_{x}
 \end{equation}
 
 In the matrix form, in units of $\hbar$:
@@ -40,24 +40,25 @@ In the matrix form, in units of $\hbar$:
 \[
 \mathcal{H}_{int}^{I} =
   \begin{bmatrix}
-    0 & \Omega_{R}  \\
-    \Omega_{R} & \Delta
+    - \Delta / 2 & \Omega_{R}  \\
+    \Omega_{R} & \Delta / 2
   \end{bmatrix}
 \]
 
+We can apply the same transformation again with respect the $\sigma_{z}$ part of this new Hamiltonian to solve the problem. We already knowhow $\sigma_{x}$ transforms: $\mathcal{H}_{I} = \Omega_{R} (e^{i\Delta t} \sigma^{+} + e^{-i\Delta t} \sigma^{-})$.
 Inserting this operator in the TDSE in the interaction picture we find:
 
 \begin{equation} \label{coupled_equations}
 \begin{cases}
-    i \dot{c}_{0}(t) = \Omega_{R} \dot{c}_{1}(t) \\
+    i \dot{c}_{0}(t) = \Omega_{R} c_{1}(t) e^{-i \Delta t} \\
     \\
-    i \dot{c}_{1}(t) = \Delta c_{1}(t) + \Omega_{R} c_{0}(t),
+    i \dot{c}_{1}(t) = \Omega_{R} c_{0}(t) e^{i \Delta t},
 \end{cases}
 \end{equation}
 which leads, for the excited state, a general function of the type:
 
 \begin{equation} \label{c1}
-    c_{1}(t) = A e^{-i\Delta t / 2}(e^{i\Omega't/2} - e^{-i\Omega't/2}),
+    c_{1}(t) = A e^{i\Delta t / 2}(e^{i\Omega't/2} - e^{-i\Omega't/2}),
 \end{equation}
 
 with $\Omega' = \sqrt{\Delta^{2} + 4 \Omega_{R}^{2}}$. This expression was written by having in mind the initial condition $|c_{1}(t=0)|^{2} = 0$, but that is not enough the determine $A$. To determine this coefficient we insert \ref{c1} in the coupled differential equations \ref{coupled_equations}, calculate $c_{0}(t)$ and consider $|c_{0}(t=0)|^{2} = 1$, which fully determines $A$:
@@ -68,6 +69,12 @@ with $\Omega' = \sqrt{\Delta^{2} + 4 \Omega_{R}^{2}}$. This expression was writt
     \\
     |c_{0}(t)|^{2} = \frac{\Delta^{2}} {\Omega'^{2}} \textrm{sin}^{2}(\Omega't/2) + \textrm{cos}^{2}(\Omega't/2)
     \end{cases}
+\end{equation}
+
+And the complete wavefunction:
+
+\begin{equation}
+    \ket{\psi} = - e^{-i\Delta t/2}[\textrm{cos}(\Omega't/2) + i \frac{\Delta}{\Omega'} \textrm{sin}(\Omega' t /2)] \ket{0} + i \frac{2\Omega_{R}}{\sqrt{\Delta ^{2} + 4\Omega_{R}^{2}}} e^{i\Delta t / 2} \textrm{sin}(\Omega' t / 2) \ket{1}
 \end{equation}
 
 The on resonance case $\Delta=0$, flips the population entirely from the ground state to the excited state when the atoms are illuminated with a pulse duration $t_{\pi}$, where $2\Omega_{R}t_{\pi} = \pi$. This is traditionally called a $\pi$--pulse. On figure \ref{rabi_osc} the several cases of pulse duration and detuning are plotted. It is important to note that the $\pi$--pulse value is representative of the dipole matrix connecting the ground and excited states and the laser intensity. Therefore, it is a special property of the atom----laser interaction. Indeed:
@@ -113,13 +120,13 @@ Truncating the series up to $k=3$, we find $t_{\pi}\delta \approx 0.797$, with $
 In the context of optical clocks, where the natural line width of the clock resonances are sub-Hertz, the Rabi profile is the observed resonance shape, limiting the stability of the clocks. The general pratice is then to set $t_{\pi}$ as long as possible. The superior technical limit for the pulse duration is naturally the coherence time of the laser, which, by Fourier transform, is related to the clock laser frequency fluctuations or phase noise. A standard practice is to reference the clock laser to an Ultra Stable Cavity (USC) with a finesse on the order of hundreds of thousands.
 The ultimate limit then becames the brownian motion of the cavity mirror coating or thermal agitation, producing a noise in the cavity length and hence noise in the resonance frequency of the cavity which propagates to the laser stabilized to cavity. Solutions to this problem include cryogenic USC and long distance between the mirrors. The coherence time of clock lasers is typically near 1 second.
 
-We quick calculation of the laser line width based on the coherence time of the laser by measuring the longest $t_\pi$ that we can set in the experiment. Let's suppose the ideal case when the laser is turned on at $t=t_{\pi}/2$ and off at $t=t_{\pi}/2$. First step is to calculate the Fourier frequencies associated with this pulse:
+We quick calculate of the laser line width based on the coherence time of the laser by measuring the longest $t_\pi$ that we can set in the experiment. Let's suppose the ideal case when the laser is turned on at $t=-t_{\pi}/2$ and off at $t=t_{\pi}/2$. First step is to calculate the Fourier frequencies associated with this pulse:
 
 \begin{equation}
     \begin{split}
-        \mathcal{F}[I(t)] & = \int^{\infty}_{-\infty} I(t) e^{-i\omega t} dt \\
-        & = \int^{t_{\pi}/2}_{-t_{\pi}/2} I_{0} e^{-i\omega t} dt \\
-        & = I_{0} t_{\pi} \frac{\textrm{sin} (\omega t_{\pi}/2)} {\omega t_{\pi}/2}
+        \mathcal{F}[\mathcal{E}(t)] & = \int^{\infty}_{-\infty} \mathcal{E}(t) e^{-i\omega t} dt \\
+        & = \int^{t_{\pi}/2}_{-t_{\pi}/2} \mathcal{E}_{0} e^{-i\omega t} dt \\
+        & = \mathcal{E}_{0} t_{\pi} \frac{\textrm{sin} (\omega t_{\pi}/2)} {\omega t_{\pi}/2}
     \end{split}
 \end{equation}
 
@@ -129,4 +136,4 @@ Now we calculate the width of this profile in the exact same way as in equations
     \Delta \nu _{FWHM} \approx \frac{1.2}{t_{\pi}}
 \end{equation}
 
-Hence, for a 1 second coherence time, the laser has an approximate line width of 1.2 Hz, according to this model. From this we conclude that to observe sub-Hertz atomic resonances, laser coherence times longer than 1 s is rquired.
+Hence, for a 1 second coherence time, the laser has an approximate line width of 1.2 Hz, according to this model. From this we conclude that to observe sub-Hertz atomic resonances, laser coherence times longer than 1 s is required.
